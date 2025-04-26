@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+HR:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+    <div class="wrapper">
+
+ <div class="top-heading">
+    <h1>Weather app</h1>
+</div>
+
+ <div class="tab-container">
+    <div class="tab" id="my-weather-tab">Your Weather</div>
+    <div class="tab" id="search-tab">Search Weather</div> 
+</div>
+
+<div class="weather-container">
+
+<!-- grant-location container-->
+ 
+
+ <div class="subcontainer grant-locationcontainer">
+    <img src="map-icon.png" width="80px" height="80px" loading="lazy">
+
+    <!-- The loading attribute in the <img> tag is used to specify how an image should be loaded on a webpage. -->
+
+    <!-- loading ="lazy" it means that the browser waits to load the image until it's about to 
+    become visible in the user's viewport. This helps improve page load performance 
+      by not loading images that aren't immediately needed.-->
+
+      <p>Grant-location access</p>
+      <p>Allow access to get Weather information</p>
+      <button class="btn" type="submit" id="graccess">Grant-access</button>
+
+      <!-- values in type attribute
+      button	: The button is a clickable button
+     submit	: The button is a submit button (submits form-data)
+     reset	 : The button is a reset button (resets the form-data to its initial values) -->
+
+
+</div>
+
+<!-- Search Weather form-->
+ <form class="form-Weathercontainer">
+    <input type="text" placeholder="Search for City ..." id="searchbar">
+    <button class="btn" type="submit" id="searchbutton">
+      <img src="searcg-bar icon.webp" width="20px" height="20px" loading="lazy">
+    </button>
+   
+
+ </form>
+
+ <!-- Loading Container-->
+  <div class="loadingclasscontainer">
+    <img src="loading-gif.webp" width="150px" height="150px">
+    <p>Loading</p>
+  </div>
+
+  <!-- show weather -->
+   <div class="subweather show-weather">
+
+    <!-- city name and flag -->
+    <div class="name">
+      <p class="city-name"></p>   <!-- dynamic in nature-->
+      <img class="country-icon"  id="flag"> <!-- same -->
+    </div>
+
+    
+    <!-- weather description -->
+    <p class="data-wea-desc"></p>
+     <img class="wea-icon">
+
+     <!-- data-temp is the custom attribute -->
+     <p class="temp" data-temp></p>
+     <!-- data-temp is a custom  attribute in HTML. 
+     It does not affect styling or behavior by itself but is used to store additional information related to the element. -->
+
+     <!-- You can set or get its value using JavaScript:
+
+🔹     Setting a Value in JavaScript
+        document.querySelector(".temp").setAttribute("data-temp", "25°C");
+
+        After this, your HTML will become:
+
+       <p class="temp" data-temp="25°C"></p> -->
+
+     <!-- 3 cards -->
+
+     <div class="cards-container">
+    
+        <!-- card-1 -->
+         <div class="card">
+           <img src="wind-speed-icon.jpg">
+           <p id="wind">speed</p>
+           <p class="data-wind-speed"></p> 
+         </div>
+
+
+         <!-- card-2 -->
+         <div class="card">
+            <img src="humid-icon.png">
+            <p id="humid">Humidity</p>
+            <p class="data-humidity"></p> 
+          </div>
+
+           <!-- card-3 -->
+         <div class="card">
+            <img src="cloud-icon.jpg">
+            <p>Clouds</p>
+            <p class="data-cloudy"></p> 
+          </div>
+
+        <!-- cards-container close -->
+        </div>
+
+
+   
+     <!-- subweather show-weather div close -->
+    </div>
+
+
+    <!-- weather-container close -->
+    </div>
+
+    <script src="docu.js"></script>
+</body>
+</html>
